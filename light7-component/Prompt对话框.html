@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/light7.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/light7.min.js"></script>
+</head>
+<body>
+<div class="page">
+    <header class="bar bar-nav">
+        <h1 class="title">Prompt</h1>
+    </header>
+
+    <div class="content">
+        <div class="content-block">
+            <p><a href="#" class="prompt-ok">Prompt with text and OK callback</a></p>
+
+            <p><a href="#" class="prompt-ok-cancel">Prompt with text, ok and cancel callback</a></p>
+
+            <p><a href="#" class="prompt-title-ok">Prompt with text, title and ok callback</a></p>
+
+            <p><a href="#" class="prompt-title-ok-cancel">Prompt with text, title, ok and cancel callback</a></p>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $(document).on("click", ".prompt-ok", function () {
+            $.prompt("What is your name?", function (value) {
+                $.alert("your name is ‘" + value + "' .You click OK button");
+            });
+        });
+
+        $(document).on("click", ".prompt-ok-cancel", function () {
+            $.prompt("What is your name?", function (value) {
+                $.alert("Your name is '" + value + "'. You click OK button")
+            }, function (value) {
+                $.alert("Your name is '" + value + "'. You click Cancel button");
+            });
+        });
+
+        $(document).on("click", ".prompt-title-ok", function () {
+            $.prompt("What is  your name?", "自定义标题", function (value) {
+                $.alert("Your name is '" + value + "'. You click OK button");
+            });
+        });
+
+        $(document).on("click", ".prompt-title-ok-cancel", function () {
+            $.prompt("What is your name?", "自定义标题", function (value) {
+                $.alert("Your name is '" + value + "'. You click OK button");
+            }, function (value) {
+                $.alert("Your name is '" + value + "'. You click Cancel button");
+            });
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/light7.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/light7.min.js"></script>
+</head>
+<body>
+<div class="page">
+    <header class="bar bar-nav">
+        <h1 class="title">日历</h1>
+    </header>
+
+    <div class="content">
+        <div class="list-block">
+            <ul>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">生日</div>
+                            <div class="item-input">
+                                <input id="my-input" type="text"  placeholder="请选择生日">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        $("#my-input").calendar();
+    })
+</script>
+</body>
+</html>

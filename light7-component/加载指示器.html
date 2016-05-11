@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/light7.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/light7.min.js"></script>
+</head>
+<body>
+<div class="page">
+    <header class="bar bar-nav">
+        <h1 class="title">预加载指示器</h1>
+    </header>
+
+    <div class="content">
+        <div class="content-block">
+            <p><a href="#" class="open-preloader">Open preloader</a></p>
+
+            <p><a href="#" class="open-preloader-title">Open preloader with custom title</a></p>
+
+            <p><a href="#" class="open-indicator">Open indicator (mini modal)</a></p>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $(document).on("click", ".open-preloader", function () {
+            $.showPreloader();
+            setTimeout(function () {
+                $.hidePreloader();
+            }, 2000);
+        });
+
+        $(document).on("click", ".open-preloader-title", function () {
+            $.showPreloader("正在加载...");
+            setTimeout(function () {
+                $.hidePreloader();
+            }, 2000)
+        });
+
+        $(document).on("click", ".open-indicator", function () {
+            $.showIndicator();
+            setTimeout(function () {
+                $.hideIndicator();
+            }, 2000)
+        })
+
+    })
+</script>
+</body>
+</html>

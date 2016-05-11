@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/light7.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/light7.min.js"></script>
+</head>
+<body>
+<div class="page">
+    <header class="bar bar-nav">
+        <h1 class="title">Popup</h1>
+    </header>
+
+    <div class="content">
+        <div class="content-block">
+            <p><a href="#" class="open-popup open-about" data-popup=".popup-about">Open About Popup with css</a></p>
+
+            <p><a href="#" class="open-popup open-service" data-popup=".popup-service">Open Service Popup with css</a>
+            </p>
+
+            <p><a href="#" class="js-open-about">用js打开About popup</a></p>
+
+            <p><a href="#" class="js-open-service">用js打开Service popup</a></p>
+        </div>
+    </div>
+</div>
+
+<div class="popup popup-about">
+    <div class="content-block">
+        <p>About</p>
+
+        <p><a href="#" class="close-popup">Close Popup</a></p>
+
+        <p>This is about popup demo</p>
+    </div>
+</div>
+
+<div class="popup popup-service">
+    <div class="content-block">
+        <p>Service</p>
+
+        <p><a href="#" class="close-popup">Close popup</a></p>
+
+        <p>This is service popup demo</p>
+    </div>
+</div>
+
+<div class="popup js-popup-about">
+    <div class="content-block">
+        <p>About Javascript</p>
+
+        <p><a href="#" class="close-popup">关闭</a></p>
+
+        <p>This is about popup demo</p>
+    </div>
+</div>
+
+<div class="popup js-popup-service">
+    <div class="content-block">
+        <p>Service javascript</p>
+
+        <p><a href="#" class="close-popup">关闭</a></p>
+
+        <p>This is service popup demo</p>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $(document).on("click", ".js-open-about", function () {
+            $.popup(".js-popup-about");
+        });
+
+        $(document).on("click", ".js-open-service", function () {
+            $.popup(".js-popup-service");
+        })
+    })
+</script>
+</body>
+</html>

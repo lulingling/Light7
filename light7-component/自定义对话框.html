@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="css/light7.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-2.1.4.min.js"></script>
+    <script src="js/light7.min.js"></script>
+</head>
+<body>
+<div class="page">
+    <header class="bar bar-nav">
+        <h1>自定义对话框</h1>
+    </header>
+
+    <div class="content">
+        <div class="content-block">
+            <p><a href="#" class="open-3-modal">Modal with 3 buttons</a></p>
+
+            <p><a href="#" class="open-slider-modal">Modal with slider</a></p>
+
+            <p><a href="#" class="open-tabs-modal">Modal with tabs</a></p>
+
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $(document).on("click", ".open-3-modal", function () {
+            $.modal({
+                title: "Modal with 3 buttons",
+                text: "根据verticalButtons：true和false来显示按钮是否数值排列",
+                verticalButtons: true,
+                buttons: [
+                    {
+                        text: "按钮B1",
+                        onClick: function () {
+                            $.alert("you click first button");
+                        }
+                    },
+                    {
+                        text: "按钮B2",
+                        onClick: function () {
+                            $.alert("You click second button");
+                        }
+                    },
+                    {
+                        text: "按钮B3",
+                        onClick: function () {
+                            $.alert("You click third button");
+                        }
+                    }
+                ]
+            });
+        });
+
+        $(document).on("click", ".open-tabs-modal", function () {
+            $.modal({
+                title: "<div class='buttons-row'>" +
+                "<a href='#tab1' class='tab-link button active'>Tab1</a>" +
+                "<a href='#tab2' class='tab-link button'>Tab2</a>" +
+                "</div>",
+                text: "<div class='tabs'>" +
+                "<div id='tab1' class='tab active'>This is tab1</div>" +
+                "<div id='tab2' class='tab'>This is tab2</div>" +
+                "</div>",
+                buttons: [
+                    {
+                        text: "Ok,got it",
+                        bold: true,
+                        onClick: function () {
+                            $.alert("I got it");
+                        }
+                    }
+                ]
+            })
+        })
+    })
+</script>
+</body>
+</html>
